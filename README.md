@@ -1,5 +1,5 @@
 # Sample Rails 4.2.5 Project for summernote-rails v0.8.1.1
-##The resources：https://github.com/summernote/summernote-rails
+##Reference：https://github.com/summernote/summernote-rails
 
 Enjoy after git cloning.
 
