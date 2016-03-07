@@ -5,7 +5,7 @@ Enjoy after git cloning.
 
 ## Development Environment
 
-* Mac OSX 10.11.3 
+* Mac OSX 10.11.3
 * Ruby 2.3.0
 * Rails 4.2.5
 
@@ -52,6 +52,34 @@ In app/assets/javascripts/application.js, you should add the following:
 //= require posts
 //= require_tree .
 //= require turbolinks
+```
+
+In app/assets/javascripts/posts.js, you should add the following:
+
+```js
+//= require summernote
+//= require summernotemt/locales/zh-CN
+
+(function() {
+    var ready;
+    ready = function() {
+        if ($("#topics-form").length > 0) {
+            topics.init()
+        }
+    };
+
+    var topics = {
+        init : function (){
+          $('.summernote').summernote({
+            height:500,
+            lang: 'zh-CN'
+
+          });
+        }
+    };
+    $(document).ready(ready);
+    $(document).on('page:load', ready);
+}).call(this);
 ```
 
 For example, if you made a `Post` model using `scaffold generator` of Rails, you would see the `post` form view template in app/views/posts/_form.html.erb.
